@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "autoeagle"
+description = "Automate tasks in Autodesk's Eagle software by invoking Python scripts from the program's command line."
+version = "0.0.0"
+requires-python = ">=3.6"
+dependencies = ["tomlkit~=0.11.6", "pytest~=7.2.1"]
+readme = "README.md"
+keywords = ["cad", "eagle", "pcb", "automation"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    ]
+
+[[project.authors]]
+name = "Matt Manes"
+email = "mattmanes@pm.me"
+
+[project.urls]
+"Homepage" = "https://github.com/matt-manes/autoeagle"
+"Documentation" = "https://github.com/matt-manes/autoeagle/tree/main/docs"
+"Source code" = "https://github.com/matt-manes/autoeagle/tree/main/src/autoeagle"
+
+[tool.pytest.ini_options]
+addopts = [
+    "--import-mode=importlib",
+    ]
+pythonpath = "src"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    ".coverage",
+    ".pytest_cache",
+    ".vscode",
+    "tests",
+    ".gitignore"
+    ]
+[project.scripts]
+autoeagle_config = "autoeagle.autoeagle_config:main"
+generate_ulp = "autoeagle.ulp_generator:main"

@@ -1,0 +1,10 @@
+string name;
+if (board) board(b){
+    name = b.name;
+}
+else if (schematic) schematic(s){
+    name = s.name;
+}
+system("$executable $script_path " + name);
+string cmd = "script $script_file;";
+exit (cmd);
