@@ -1,7 +1,6 @@
 # Autoeagle
 
 Automate tasks in Autodesk's Eagle software by invoking Python scripts from the program's command line.<br>
-The built in ulp language is awful and they really should have just let us use Python.
 
 ## Installation
 
@@ -223,3 +222,6 @@ That ulp then launches our Python script and passes the currently open file name
 `shrink_board.py` parses the board file, prompts us for a minimum clearance, and generates a `.scr` file with the Eagle editor commands to 
 appropriately shrink our board outline.<br>
 Finally, upon exiting the ulp, it returns a command to Eagle to execute our new `.scr` file.
+<br>
+
+For further reference on editor commands that can be used in an `.scr` file, see the Eagle help documentation.
